@@ -17,8 +17,5 @@ public class Livro {
     public Autor getAutor() { return autor; }
     public String getGenero() { return genero; }
     public boolean eDisponivel() { return disponivel; }
-    
-    public void mudarDisponibilidade() {
-        this.disponivel = !this.disponivel;
-    }
+    public void mudarDisponibilidade() { this.disponivel = !this.disponivel; }
 }
