@@ -1,25 +1,23 @@
+package com.mycompany.app;
+
 public class Livro {
     private String titulo;
     private Autor autor;
     private String genero;
-    private boolean disponivel = true;
+    private boolean disponivel;
 
-    // Construtor para facilitar a criação na Main
-    public Livro(String titulo, Autor autor, String genero) {
+    public Livro(String titulo, Autor autor, String genero, boolean disponivel) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
+        this.disponivel = disponivel;
     }
 
     public String getTitulo() { return titulo; }
     public Autor getAutor() { return autor; }
     public String getGenero() { return genero; }
-
-    // VERIFIQUE SE ESTES NOMES ESTÃO EXATAMENTE ASSIM:
-    public boolean eDisponivel() {
-        return disponivel;
-    }
-
+    public boolean eDisponivel() { return disponivel; }
+    
     public void mudarDisponibilidade() {
         this.disponivel = !this.disponivel;
     }
