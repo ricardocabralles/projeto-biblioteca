@@ -1,15 +1,28 @@
 package com.mycompany.app;
 
 public class Autor extends Pessoa {
-    private String nacionalidade;
-    private boolean ehUsuario; // Campo solicitado no desafio 1 da imagem 893400
+    private boolean ehUsuario;
+    
+    private PublicavelInterface estrategiaPublicacao;
 
     public Autor(String nome, String nacionalidade, boolean ehUsuario) {
-        super(nome);
-        this.nacionalidade = nacionalidade;
+        super(nome, nacionalidade);
         this.ehUsuario = ehUsuario;
     }
 
-    public String getNacionalidade() { return nacionalidade; }
+    
+    public void setEstrategiaPublicacao(PublicavelInterface estrategia) {
+        this.estrategiaPublicacao = estrategia;
+    }
+
+  
+    public void publicar() {
+        if (estrategiaPublicacao != null) {
+            estrategiaPublicacao.publicar();
+        } else {
+            System.out.println("Nenhuma estratégia de publicação definida para " + getNome());
+        }
+    }
+
     public boolean isEhUsuario() { return ehUsuario; }
 }
